@@ -1,0 +1,4 @@
+在服务器的配置的过程中  最重要的是两个文件  
+Apache 的httpd.conf
+Nginx 的nginx.conf 
+这里面包含了 很多服务的信息 例如 运行目录 和端口号  
