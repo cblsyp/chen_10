@@ -1,0 +1,26 @@
+1.随时切换Php版本
+2.web服务器可以自由选择（apache,nginx）
+3.配置（更加清晰的了解php的运行环境，配置）
+
+软件的选择  bs的开发 browser   server(apache.nginx)  php(php7,php5.6,php5.2)  mysql(>5.5)
+
+windows  操作系统的区别 
+(面向对象的思想)
+a:2位操作系统 b:64位的操作系统  如果相对代码进行加密的话 必须运行非线程安全的版    可以向下兼容  但是不能向上兼容    一般选择32位的线程安全的 
+
+Apache的下载  (php   vc11  X86 thread safe)  apache 是有要求的  
+第一点：  必须是VC11 的Apache    vc是一个微软的运行库  版本号11   这个是安装C++  所必须的  
+安装Apache   之前必须安装vc库  在程序里面  Apache 是用C++写的  visual C++ 2015  就是VC 14  
+
+
+
+Apache 分两种 1. msi 文件   2.  apache  文件目录 （这两种是我们直接可以拿来用的）    
+
+apache  的配置文件有两个  httpd.conf   还有一个在apache/conf/extra/httpd-vhosts.conf(这个是配置本地虚拟目录的)
+
+在安装的过程中  for All Users ,as a service-Recommended  
+
+custom  表示自定义安装  Typical  经典的  
+选择  custom  国际惯例 所有的bin  都是可执行文件  
+
+
