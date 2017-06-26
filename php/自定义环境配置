@@ -22,5 +22,52 @@ apache  的配置文件有两个  httpd.conf   还有一个在apache/conf/extra/
 
 custom  表示自定义安装  Typical  经典的  
 选择  custom  国际惯例 所有的bin  都是可执行文件  
+localhost  表示本地服务  apache默认的有一个加载的页面  在htdocs下面的index.html里面  
+如果不更改  DocumentRoot 的地址  如果更改了地址 那么将不会加载index.html文件
+配置文件的#部分  表示注释
+<Directory>
+
+</Directory>
+
+安装php的注意的地方    php中ext中有很多dll文件  这个是PHP的类库  php_gd2.dll  这个是图像处理的库  甚至我们可以自己编写c++库  
+需要认识exe文件  PHP可以作为php 的容器   也可以在命令行跑php文件  php.exe  name.php 就可以执行php文件  
+在根目录下面的这个文件非常重要php5apache2_2.dll   他是让我们这个php作为一个Apache 的插件使用的重要的文件 你要使用Apache 2.2  的版本 如果你使用Apache 的2.4就不行   
+
+
+关于php.ini-development(开发环境的php配置文件，实际上这个需要改名成php.ini文件)   php.ini-production （显示的生产环境的文件） 
+需要复制命名  php的配置文件  
+
+文件需要修改的话有两种方式：  1.直接对php.ini 进行修改  2.ini-set  函数设置  
+关于配置文件中的;全部表示注释的意思
+需要修改的东西
+ 1.需要载入我们的扩展库  找到extension_dir = "H:/php-5.3.10-Win32-VC9-x86/ext"  ''后面填写真实的地址  扩展的根目录 
+ ;extension=php_bz2.dll
+extension=php_curl.dll
+;extension=php_fileinfo.dll
+extension=php_gd2.dll
+;extension=php_gettext.dll
+;extension=php_gmp.dll
+;extension=php_intl.dll
+;extension=php_imap.dll
+;extension=php_interbase.dll
+;extension=php_ldap.dll
+extension=php_mbstring.dll
+看一下  哪些php核心类库我们需要用  那么将分号去掉  甚至需要填写新的东西   新版本的东西php  mysql  需要我们设置时区 date.timezone = Asia/Shanghai 
+
+为了安全考虑 一般会禁止一些程序disable_functions =  这个就是用来搞这个的
+
+
+先开来配置Apache 的配置文件 
+1. PHPIniDir "H:/php-5.3.10-Win32-VC9-x86"  使用PHP扩展 属性名 属性值 
+2.让php作为一个模块  dll文件是windows上面使用的
+LoadModule php5_module "H:/php-5.3.10-Win32-VC9-x86/php5apache2_2.dll"
+
+3.什么样子的后缀名  能够当成php文件来处理  AddType application/x-httpd-php .php .html .htm  需要用这个来配置 
+
+学会调试错误日志  
+1.logs  
+检查php和apache的版本是否一致  
+
+
 
 
