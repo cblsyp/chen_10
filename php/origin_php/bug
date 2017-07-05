@@ -1,0 +1,10 @@
+1  情况：新公司的开发人员走了  mysql的用户的密码忘记了  网上找资料 不行http://www.cnblogs.com/SmartNing/p/5178628.html
+
+提示：TIMESTAMP（时间戳） with implicit DEFAULT value is deprecated. Please use --explicit_defaults_for_timestamp server option (see documentation for more details).
+
+implicit :不言明[含蓄]的; 无疑问的，绝对的; 成为一部份的; 内含的;
+explicit:明确的，清楚的; 直言的; 详述的; 不隐瞒的;
+
+所以我现在貌似收受无策了 现在好了  并且成功的更改了MySQL里面的关于user的配置文件  
+然后用PHP连接数据库也正常了   
+但是中文字符显示在chorm 中总是乱码  两个方面的原因  
